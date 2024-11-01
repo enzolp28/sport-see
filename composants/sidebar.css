@@ -1,0 +1,37 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #020203;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding: 10px 20px;
+    color: #fff;
+    width: 117px;
+    height: 100vh;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    ;
+}
+
+.icon img {
+    cursor: pointer;
+}
+
+.copyright {
+    height: 150px;
+    width: 150px;
+}
+
+.copyright p {
+    rotate: 270deg;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+}
