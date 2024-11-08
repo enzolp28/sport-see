@@ -1,0 +1,35 @@
+.profil-page {
+    margin: 60px 40px;
+}
+
+.profil-page h1 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+}
+
+.profil-page .firstName {
+    color: #E60000;
+}
+
+.texte-encouragement {
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 5400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.statistics-container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 50px;
+    gap: 50px;
+}
+
+.macro-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
