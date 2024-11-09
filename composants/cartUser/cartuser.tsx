@@ -2,7 +2,12 @@ import React from 'react'
 import './cartUser.css'
 // import data from '@/lib/data';
 
-export default function Cartuser({ name, age }) {
+type CartuserProps = {
+    name: string,
+    age: number
+}
+
+export default function Cartuser({ name, age }: CartuserProps) {
 
     return (
         <div className='cart-user'>
