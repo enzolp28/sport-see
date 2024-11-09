@@ -1,7 +1,7 @@
 "use client"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { USER_ACTIVITY } from '@/lib/data';
-import '../composants/activity.css'
+import './activity.css'
 import useFetch from '@/lib/useFetch';
 
 

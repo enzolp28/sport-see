@@ -1,14 +1,13 @@
 import Image from "next/image";
-import '../composants/macronutriment.css';
+import './macronutriment.css';
 
 type MacronutrimentProps = {
+    id: number;
     calories: number;
     info: string;
     src: string
 
 };
-
-
 
 export default function Macronutriment({ calories, info, src }: MacronutrimentProps) {
 

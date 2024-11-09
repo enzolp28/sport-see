@@ -21,8 +21,8 @@ const Sessions = ({ id }: { id: number }) => {
     console.log('forma', formattedData);
 
     return (
-        <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#FF0000" }}>
-            <LineChart width={300} height={200} data={formattedData}>
+        <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#FF0000" }} minWidth={270}>
+            <LineChart width={270} height={263} data={formattedData}>
                 <Line type="monotone" dataKey="sessionLength" stroke="#fff" strokeWidth={2}
                     dot={false}
                     activeDot={{

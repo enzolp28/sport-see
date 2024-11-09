@@ -1,9 +1,10 @@
 import React from 'react'
 import { USER_MAIN_DATA } from '@/lib/data';
-import Activity from '@/composants/activity';
-import Macronutriment from '@/composants/macronutriment';
+import Activity from '@/composants/dailyActivity/activity';
+import Macronutriment from '@/composants/macronutriment/macronutriment';
 import './page.css'
 import Sessions from '@/composants/session';
+import Performance from '@/composants/performance';
 
 
 type ParamsType = {
@@ -16,15 +17,9 @@ export default async function Profil({ params }: ParamsType) {
     const { id } = await params;
     const data = USER_MAIN_DATA.find((user) => user.id === Number(id));
 
-
-
-    console.log(data?.keyData.calorieCount);
     if (!data) {
         return <div>Loading...</div>;
     }
-    console.log('data 2', data.keyData);
-    const macroData = data.keyData;
-
 
     return (
         <div className='profil-page'>
@@ -37,7 +32,7 @@ export default async function Profil({ params }: ParamsType) {
                     <Activity id={Number(id)} />
                     <div className="three-graph">
                         <Sessions id={Number(id)} />
-
+                        <Performance />
                     </div>
                 </div>
                 <div className="macro-container">
