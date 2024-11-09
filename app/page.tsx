@@ -1,29 +1,21 @@
 
 import Link from "next/link";
+import Cartuser from "@/composants/cartUser/cartUser";
+import { USER_MAIN_DATA } from '@/lib/data';
 
 export default function Home() {
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const response = await fetch(`http://localhost:3000/user/18}`);
-  //       const data = await response.json();
-  //       setData(data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   }
-  //   fetchData();
-  // }, []);
-  // console.log(data.userInfos);
+
+  console.log(USER_MAIN_DATA[1].userInfos.age);
 
   return (
     <div className="home">
-      <h1>Home</h1>
-      <p>
-        <Link href="/profil/18">Profil 18</Link>
-        <Link href="/profil/12">Profil 12</Link>
-      </p>
+      <Link href="/profil/12">
+        <Cartuser name={USER_MAIN_DATA[0].userInfos.firstName} age={USER_MAIN_DATA[0].userInfos.age} />
+      </Link>
+      <Link href="/profil/18">
+        <Cartuser name={USER_MAIN_DATA[1].userInfos.firstName} age={USER_MAIN_DATA[1].userInfos.age} />
+      </Link>
     </div>
   );
 }

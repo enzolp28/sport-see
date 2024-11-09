@@ -1,0 +1,39 @@
+.cart-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 130px;
+    background: #f6f5f5;
+    margin-top: 20px;
+    border-radius: 10px;
+
+}
+
+.cart-user h2 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+}
+
+.cart-user p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+}
+
+.cart-user:hover {
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+    /* border: 2px solid #E60000; */
+
+}
+
+.cart-user:hover h2,
+.cart-user:hover p {
+    color: #E60000;
+}

@@ -5,8 +5,6 @@ import '../composants/activity.css'
 import useFetch from '@/lib/useFetch';
 
 
-
-
 export default function Activity({ id }: { id: number }) {
     const { data, loading } = useFetch(id, 'activity');
 
