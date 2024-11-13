@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { USER_AVERAGE_SESSIONS } from '@/lib/data';
 import useFetch from '@/lib/useFetch';
 
 
@@ -18,12 +17,13 @@ const Sessions = ({ id }: { id: number }) => {
         day: jourDeSemaine[session.day - 1],
         sessionLength: session.sessionLength
     }))
-    console.log('forma', formattedData);
+    // console.log('forma', formattedData);
 
     return (
         <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#FF0000" }} minWidth={270}>
-            <LineChart width={270} height={263} data={formattedData}>
+            <LineChart width={275} height={263} data={formattedData} >
                 <Line type="monotone" dataKey="sessionLength" stroke="#fff" strokeWidth={2}
+
                     dot={false}
                     activeDot={{
                         // fill: 'white',
@@ -32,6 +32,9 @@ const Sessions = ({ id }: { id: number }) => {
                         r: 5,
                     }} />
                 <XAxis dataKey="day" dy={10} tickLine={false} axisLine={false} stroke='rgba(255, 255, 255, 0.8)' />
+                <text x="60%" y="30%" textAnchor="middle" fontSize="18" fontWeight="bold" fill="white">
+                    Durée moyenne des sessions
+                </text>
             </LineChart>
         </ResponsiveContainer>
     );

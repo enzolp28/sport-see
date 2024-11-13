@@ -32,7 +32,7 @@ export default async function Profil({ params }: ParamsType) {
                     <Activity id={Number(id)} />
                     <div className="three-graph">
                         <Sessions id={Number(id)} />
-                        <Performance />
+                        <Performance id={Number(id)} />
                     </div>
                 </div>
                 <div className="macro-container">

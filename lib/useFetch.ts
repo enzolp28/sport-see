@@ -18,11 +18,15 @@ export default function useFetch(id: number, type: string) {
                 switch (type) {
                     case 'average-sessions':
                         setData(USER_AVERAGE_SESSIONS.find((user) => user.userId === id));
-
                         break;
 
                     case 'activity':
                         setData(USER_ACTIVITY.find((user) => user.userId === id));
+                        break;
+
+                    case 'performance':
+                        setData(USER_ACTIVITY.find((user) => user.userId === id));
+                        break;
 
                     default:
                         break;

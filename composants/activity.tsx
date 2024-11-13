@@ -1,7 +1,7 @@
 "use client"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { USER_ACTIVITY } from '@/lib/data';
-import './activity.css'
+import '../composants/activity.css'
 import useFetch from '@/lib/useFetch';
 
 
@@ -74,9 +74,12 @@ export default function Activity({ id }: { id: number }) {
                         hide={true}
                         dataKey="calories"
                         type='number'
+
                         // domain={['dataMin - 20', 'dataMax + 10']}
                         yAxisId="calories"
                     // tickCount={3}
+
+
                     />
 
                     <Tooltip />
