@@ -21,15 +21,15 @@ export default function Performance({ id }: { id: number }) {
     // };
 
     const translations = {
-        cardio: 'cardio',
-        energy: 'énergie',
-        endurance: 'endurance',
-        strength: 'force',
-        speed: 'vitesse',
-        intensity: 'intensité'
+        cardio: 'Cardio',
+        energy: 'Ènergie',
+        endurance: 'Endurance',
+        strength: 'Force',
+        speed: 'Vitesse',
+        intensity: 'Intensité'
     };
 
-    const desiredOrder = ['intensité', 'vitesse', 'force', 'endurance', 'énergie', 'cardio'];
+    const desiredOrder = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Ènergie', 'Cardio'];
 
     const formattedData = data?.data
         .map((item) => ({
@@ -46,12 +46,15 @@ export default function Performance({ id }: { id: number }) {
 
 
     return (
-        <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#282D30" }}>
-            <RadarChart cx="50%" cy="50%" outerRadius="80%" width={380} height={263} data={formattedData}>
-                <PolarGrid radialLines={false} />
-                <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 15 }} />
-                <Radar name="Mike" dataKey="value" stroke="#FF0000" fill="#FF0000" fillOpacity={0.7} />
-            </RadarChart>
-        </ResponsiveContainer>
+        <div className="graph-container">
+            <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#282D30" }}>
+                <RadarChart cx="50%" cy="50%" outerRadius="80%" width={380} height={263} data={formattedData}>
+                    <PolarGrid radialLines={false} />
+                    <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 15 }} />
+                    <Radar name="Mike" dataKey="value" stroke="#FF0000" fill="#FF0000" fillOpacity={0.7} />
+                </RadarChart>
+            </ResponsiveContainer>
+        </div>
     );
+
 }

@@ -6,8 +6,6 @@ import { USER_MAIN_DATA } from '@/lib/data';
 export default function Home() {
 
 
-  console.log(USER_MAIN_DATA[1].userInfos.age);
-
   return (
     <div className="home">
       <Link href="/profil/12">

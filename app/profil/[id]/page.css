@@ -43,5 +43,11 @@
 .three-graph {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: 10px;
+}
+
+.graph-container {
+    flex: 1;
+    position: relative;
 }

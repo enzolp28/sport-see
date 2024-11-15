@@ -5,6 +5,7 @@ import Macronutriment from '@/composants/macronutriment/macronutriment';
 import './page.css'
 import Sessions from '@/composants/session';
 import Performance from '@/composants/performance';
+import Score from '@/composants/score';
 
 
 type ParamsType = {
@@ -16,6 +17,8 @@ type ParamsType = {
 export default async function Profil({ params }: ParamsType) {
     const { id } = await params;
     const data = USER_MAIN_DATA.find((user) => user.id === Number(id));
+    const score = data?.score ? data.score : data?.todayScore;
+
 
     if (!data) {
         return <div>Loading...</div>;
@@ -33,13 +36,14 @@ export default async function Profil({ params }: ParamsType) {
                     <div className="three-graph">
                         <Sessions id={Number(id)} />
                         <Performance id={Number(id)} />
+                        <Score score={score} />
                     </div>
                 </div>
                 <div className="macro-container">
-                    <Macronutriment id={Number(id)} calories={data.keyData.calorieCount} info="KCal" src="/calories-icon.svg" />
-                    <Macronutriment id={Number(id)} calories={data.keyData.proteinCount} info="g" src="/protein-icon.svg" />
-                    <Macronutriment id={Number(id)} calories={data.keyData.carbohydrateCount} info="g" src="/glucide-icon.svg" />
-                    <Macronutriment id={Number(id)} calories={data.keyData.lipidCount} info="g" src="/lipide-icon.svg" />
+                    <Macronutriment id={Number(id)} calories={data.keyData.calorieCount} info="KCal" src="/calories-icon.svg" value="Calories" />
+                    <Macronutriment id={Number(id)} calories={data.keyData.proteinCount} info="g" src="/protein-icon.svg" value="Proteines" />
+                    <Macronutriment id={Number(id)} calories={data.keyData.carbohydrateCount} info="g" src="/glucide-icon.svg" value="Glucides" />
+                    <Macronutriment id={Number(id)} calories={data.keyData.lipidCount} info="g" src="/lipide-icon.svg" value="Lipides" />
                 </div>
             </div>
         </div>
