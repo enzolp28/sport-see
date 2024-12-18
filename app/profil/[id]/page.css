@@ -23,7 +23,6 @@
 
 .statistics-container {
     display: flex;
-    align-items: flex-start;
     margin-top: 50px;
     gap: 50px;
 }
@@ -31,6 +30,7 @@
 .macro-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 40px;
 }
 

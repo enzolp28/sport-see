@@ -1,5 +1,20 @@
 .activity-container {
     background: #FBFBFB;
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 30px
+}
+
+.activity-responsive-container {
+    margin: 50px !important;
+}
+
+.custom-tooltip {
+    background: #E60000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.custom-tooltip .label:first-child {
+    margin-bottom: 25px;
 }

@@ -3,6 +3,13 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import useFetch from '@/lib/useFetch';
 
+/**
+ * Composant Performance qui affiche un graphique radar des différentes métriques de performance
+ * @component
+ * @param {Object} props - Propriétés du composant
+ * @param {number} props.id - ID de l'utilisateur pour récupérer les données de performance
+ * @returns {JSX.Element} Composant de graphique radar de performance
+ */
 export default function Performance({ id }: { id: number }) {
 
     const { data, loading } = useFetch(id, 'performance');
@@ -11,15 +18,10 @@ export default function Performance({ id }: { id: number }) {
         return <div>Loading...</div>;
     }
 
-    // const translations = {
-    //     intensity: 'intensité',
-    //     speed: 'vitesse',
-    //     strength: 'force',
-    //     endurance: 'endurance',
-    //     energy: 'énergie',
-    //     cardio: 'cardio',
-    // };
-
+    /**
+     * Mapping des traductions pour les métriques de performance
+     * @type {Object.<string, string>}
+     */
     const translations = {
         cardio: 'Cardio',
         energy: 'Ènergie',
@@ -29,7 +31,22 @@ export default function Performance({ id }: { id: number }) {
         intensity: 'Intensité'
     };
 
+    /**
+     * Ordre d'affichage souhaité pour les métriques de performance
+     * @type {string[]}
+     */
     const desiredOrder = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Ènergie', 'Cardio'];
+
+    /**
+     * Interface pour les données de performance formatées
+     * @interface FormattedPerformanceData
+     * @property {string} kind - Type de métrique de performance
+     * @property {number} value - Valeur de la métrique de performance
+     */
+    interface FormattedPerformanceData {
+        kind: string;
+        value: number;
+    }
 
     const formattedData = data?.data
         .map((item) => ({
@@ -48,7 +65,7 @@ export default function Performance({ id }: { id: number }) {
     return (
         <div className="graph-container">
             <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#282D30" }}>
-                <RadarChart cx="50%" cy="50%" outerRadius="80%" width={380} height={263} data={formattedData}>
+                <RadarChart cx="50%" cy="50%" outerRadius="80%" width={300} height={263} data={formattedData}>
                     <PolarGrid radialLines={false} />
                     <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 15 }} />
                     <Radar name="Mike" dataKey="value" stroke="#FF0000" fill="#FF0000" fillOpacity={0.7} />

@@ -1,6 +1,13 @@
 import Image from 'next/image'
 import './sidebar.css'
 
+/**
+ * Composant Sidebar affiche les icônes d'activité et les informations de copyright
+ * @component
+ * @returns {JSX.Element} Barre latérale avec icônes d'activité et mention de copyright
+ * @description Barre latérale verticale contenant des icônes pour différentes activités physiques 
+ * (yoga, natation, vélo, musculation) et une mention de copyright en bas
+ */
 export default function Sidebar() {
     return (
         <div className="sidebar">

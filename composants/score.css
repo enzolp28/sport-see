@@ -1,0 +1,39 @@
+.score-container {
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    position: relative;
+}
+
+.score-container h3 {
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.score-info {
+    position: absolute;
+    width: 148px;
+    height: 148px;
+    left: 75px;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 39px;  
+
+}
+
+.score-info p {
+    margin: 0;
+    text-align: center;
+}
+
+.score-info p:last-child {
+    color: #74798C;
+}
+

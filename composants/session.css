@@ -1,0 +1,12 @@
+.legend {
+    position: absolute;
+    left: 40px;
+    bottom: 210px;
+    width: 200px;
+    color: #ffffff;
+    opacity: calc(0.5);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+}

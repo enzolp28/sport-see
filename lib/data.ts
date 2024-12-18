@@ -1,3 +1,18 @@
+/**
+ * Données principales des utilisateurs
+ * @type {Array<Object>}
+ * @property {number} id - Identifiant unique de l'utilisateur
+ * @property {Object} userInfos - Informations personnelles de l'utilisateur
+ * @property {string} userInfos.firstName - Prénom de l'utilisateur
+ * @property {string} userInfos.lastName - Nom de l'utilisateur
+ * @property {number} userInfos.age - Âge de l'utilisateur
+ * @property {number} todayScore - Score du jour (entre 0 et 1)
+ * @property {Object} keyData - Données clés nutritionnelles
+ * @property {number} keyData.calorieCount - Nombre de calories
+ * @property {number} keyData.proteinCount - Quantité de protéines
+ * @property {number} keyData.carbohydrateCount - Quantité de glucides
+ * @property {number} keyData.lipidCount - Quantité de lipides
+ */
 export const USER_MAIN_DATA = [
     {
         id: 12,
@@ -31,6 +46,15 @@ export const USER_MAIN_DATA = [
     }
 ]
 
+/**
+ * Données d'activité des utilisateurs
+ * @type {Array<Object>}
+ * @property {number} userId - Identifiant de l'utilisateur
+ * @property {Array<Object>} sessions - Sessions d'activité
+ * @property {string} sessions.day - Date de la session
+ * @property {number} sessions.kilogram - Poids en kilogrammes
+ * @property {number} sessions.calories - Calories brûlées
+ */
 export const USER_ACTIVITY = [
     {
         userId: 12,
@@ -115,6 +139,14 @@ export const USER_ACTIVITY = [
 ]
 
 
+/**
+ * Données de sessions moyennes des utilisateurs
+ * @type {Array<Object>}
+ * @property {number} userId - Identifiant de l'utilisateur
+ * @property {Array<Object>} sessions - Sessions d'activité
+ * @property {number} sessions.day - Jour de la semaine
+ * @property {number} sessions.sessionLength - Durée de la session
+ */
 export const USER_AVERAGE_SESSIONS = [
     {
         userId: 12,
@@ -185,6 +217,15 @@ export const USER_AVERAGE_SESSIONS = [
 ]
 
 
+/**
+ * Données de performance des utilisateurs
+ * @type {Array<Object>}
+ * @property {number} userId - Identifiant de l'utilisateur
+ * @property {Object} kind - Types de performance
+ * @property {Array<Object>} data - Données de performance
+ * @property {number} data.value - Valeur de la performance
+ * @property {number} data.kind - Type de la performance
+ */
 export const USER_PERFORMANCE = [
     {
         userId: 12,
@@ -261,4 +302,3 @@ export const USER_PERFORMANCE = [
         ]
     }
 ]
-

@@ -1,6 +1,15 @@
 import Image from "next/image";
 import './macronutriment.css';
 
+/**
+ * Interface des propriétés pour le composant Macronutriment
+ * @interface MacronutrimentProps
+ * @property {number} id - Identifiant unique du macronutriment
+ * @property {number} calories - Nombre de calories
+ * @property {string} info - Informations supplémentaires sur le macronutriment
+ * @property {string} src - URL source de l'icône du macronutriment
+ * @property {string} value - Valeur d'affichage pour le macronutriment
+ */
 type MacronutrimentProps = {
     id: number,
     calories: number,
@@ -10,9 +19,14 @@ type MacronutrimentProps = {
 };
 
 /**
- * Composant Macronutriment
- * @param {MacronutrimentProps} props - Props du composant
- * @returns {JSX.Element} Élément JSX du composant
+ * Composant Macronutriment affiche les informations nutritionnelles avec une icône
+ * @component
+ * @param {Object} props - Propriétés du composant
+ * @param {number} props.calories - Nombre de calories à afficher
+ * @param {string} props.info - Texte d'information supplémentaire
+ * @param {string} props.src - URL source de l'icône
+ * @param {string} props.value - Texte de la valeur à afficher
+ * @returns {JSX.Element} Carte d'information sur les macronutriments
  */
 export default function Macronutriment({ calories, info, src, value }: MacronutrimentProps) {
     /**
