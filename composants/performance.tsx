@@ -2,6 +2,7 @@
 // import React, { PureComponent } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import useFetch from '@/lib/useFetch';
+import { log } from 'console';
 
 /**
  * Composant Performance qui affiche un graphique radar des différentes métriques de performance
@@ -47,8 +48,8 @@ export default function Performance({ id }: { id: number }) {
         kind: string;
         value: number;
     }
-
-    const formattedData = data?.data
+    console.log("Data----",data)
+    const formattedData = data?.data?
         .map((item) => ({
             kind: translations[data.kind[item.kind]],
             value: item.value
@@ -65,10 +66,10 @@ export default function Performance({ id }: { id: number }) {
     return (
         <div className="graph-container">
             <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#282D30" }}>
-                <RadarChart cx="50%" cy="50%" outerRadius="80%" width={300} height={263} data={formattedData}>
+                <RadarChart  outerRadius="70%" width={300} height={300} data={formattedData}>
                     <PolarGrid radialLines={false} />
-                    <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 15 }} />
-                    <Radar name="Mike" dataKey="value" stroke="#FF0000" fill="#FF0000" fillOpacity={0.7} />
+                    <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 15, dy: 5 }} />
+                    <Radar dataKey="value" stroke="#FF0000" fill="#FF0000" fillOpacity={0.7} />
                 </RadarChart>
             </ResponsiveContainer>
         </div>

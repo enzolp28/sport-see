@@ -8,7 +8,7 @@
     padding: 10px 20px;
     color: #fff;
     width: 117px;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .icon {
@@ -17,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 25px;
-    ;
+    
 }
 
 .icon img {

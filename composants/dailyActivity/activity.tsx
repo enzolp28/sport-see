@@ -99,9 +99,9 @@ export default function Activity({ id }: { id: number }) {
                     <YAxis
                         dataKey="kilogram"
                         orientation="right"
-                        // domain={['dataMin - 30', 'dataMax + 30']}
+                        domain={['dataMin - 30', 'dataMax + 30']}
                         type='number'
-                        tickCount={3}
+                        tickCount={4}
                         tickLine={false}
                         tickMargin={20}
                         axisLine={false}
