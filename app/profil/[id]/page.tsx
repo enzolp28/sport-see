@@ -1,11 +1,16 @@
-import React from 'react'
-import { USER_MAIN_DATA } from '@/lib/data';
+'use client';
+// import { USER_MAIN_DATA } from '@/lib/data';
+
 import Activity from '@/composants/dailyActivity/activity';
 import Macronutriment from '@/composants/macronutriment/macronutriment';
 import './page.css'
 import Sessions from '@/composants/session';
 import Performance from '@/composants/performance';
 import Score from '@/composants/score';
+import useFetch from '@/lib/useFetch';
+import { use } from 'react';
+import { useParams } from 'next/navigation';
+
 
 
 type ParamsType = {
@@ -14,9 +19,14 @@ type ParamsType = {
     }
 }
 
-export default async function Profil({ params }: ParamsType) {
-    const { id } = await params;
-    const data = USER_MAIN_DATA.find((user) => user.id === Number(id));
+
+export default  function Profil() {
+    // const { id } = await params;
+    //const data = USER_MAIN_DATA.find((user) => user.id === Number(id));
+    const params = useParams();
+    const id = params?.id;
+    const { data } = useFetch(Number(id), '');
+
     const score = data?.score ? data.score : data?.todayScore;
 
 

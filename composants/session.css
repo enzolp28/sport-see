@@ -1,3 +1,7 @@
+.graph {
+    border-radius: 5px;
+}
+
 .legend {
     position: absolute;
     left: 40px;

@@ -53,15 +53,15 @@ const Sessions = ({ id }: { id: number }) => {
 
     return (
         <div className="graph-container">
-            <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#FF0000" }}>
-                <LineChart 
-                    width={300} 
-                    height={300} 
-                    data={formattedData} 
+            <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#FF0000", borderRadius: "5px" }}>
+                <LineChart
+                    width={300}
+                    height={300}
+                    data={formattedData}
                     margin={{ top: 30, right: 5, left: 5, bottom: 5 }}
                 >
                     <Legend content={<p className='legend'>Durée moyenne des sessions</p>} />
-                    
+
                     <defs>
                         <linearGradient id="gradientLine" x="0" x2="1.0">
                             <stop offset="0%" stopColor="white" stopOpacity={0.3} />
@@ -69,18 +69,18 @@ const Sessions = ({ id }: { id: number }) => {
                         </linearGradient>
                     </defs>
                     <CartesianGrid horizontal={false} vertical={false} />
-                    <XAxis 
-                        dataKey="day" 
-                        axisLine={false} 
+                    <XAxis
+                        dataKey="day"
+                        axisLine={false}
                         tickLine={false}
                         tick={{ fill: 'rgba(255, 255, 255, 0.5)' }}
                         padding={{ left: 10, right: 10 }}
                     />
                     <YAxis hide={true} />
                     <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
-                    <Line 
-                        type="monotone" 
-                        dataKey="sessionLength" 
+                    <Line
+                        type="monotone"
+                        dataKey="sessionLength"
                         stroke="url(#gradientLine)"
                         strokeWidth={2}
                         dot={false}

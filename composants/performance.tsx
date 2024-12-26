@@ -48,13 +48,13 @@ export default function Performance({ id }: { id: number }) {
         kind: string;
         value: number;
     }
-    console.log("Data----",data)
-    const formattedData = data?.data?
+    console.log("Data----", data)
+    const formattedData = data?.data ?
         .map((item) => ({
-            kind: translations[data.kind[item.kind]],
-            value: item.value
-        }))
-        .sort((a, b) => desiredOrder.indexOf(a.kind) - desiredOrder.indexOf(b.kind));
+        kind: translations[data.kind[item.kind]],
+        value: item.value
+    }))
+            .sort((a, b) => desiredOrder.indexOf(a.kind) - desiredOrder.indexOf(b.kind));
 
     const dataKind = Object.values(data?.kind);
     console.log(dataKind)
@@ -65,8 +65,8 @@ export default function Performance({ id }: { id: number }) {
 
     return (
         <div className="graph-container">
-            <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#282D30" }}>
-                <RadarChart  outerRadius="70%" width={300} height={300} data={formattedData}>
+            <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#282D30", borderRadius: "5px" }}>
+                <RadarChart outerRadius="70%" width={300} height={300} data={formattedData}>
                     <PolarGrid radialLines={false} />
                     <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 15, dy: 5 }} />
                     <Radar dataKey="value" stroke="#FF0000" fill="#FF0000" fillOpacity={0.7} />

@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { USER_AVERAGE_SESSIONS, USER_ACTIVITY, USER_PERFORMANCE } from '@/lib/data';
+import { USER_AVERAGE_SESSIONS, USER_ACTIVITY, USER_PERFORMANCE, USER_MAIN_DATA } from '@/lib/data';
 
 /**
  * useFetch est un hook personnalisé qui permet de récupérer des données à partir d'une API.
@@ -19,6 +19,8 @@ export default function useFetch(id: number, type: string) {
     useEffect(() => {
         async function fetchData() {
             try {
+                console.log('id', id);
+                console.log('type', type);
                 const response = await fetch(`http://localhost:3000/user/${id}/${type}`);
                 const data = await response.json();
                 setData(data.data);
@@ -36,6 +38,10 @@ export default function useFetch(id: number, type: string) {
 
                     case 'performance':
                         setData(USER_PERFORMANCE.find((user) => user.userId === id));
+                        break;
+
+                    case '':
+                        setData(USER_MAIN_DATA.find((user) => user.id === id));
                         break;
 
                     default:

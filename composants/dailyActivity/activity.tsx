@@ -38,11 +38,8 @@ export default function Activity({ id }: { id: number }) {
         calories: session.calories
     }))
 
-    console.log(formattedData);
-
     const minKilogram = Math.min(...formattedData.map((data) => data.kilogram));
     const maxKilogram = Math.max(...formattedData.map((data) => data.kilogram));
-    console.log(minKilogram, maxKilogram);
 
 
     const minCalories = Math.min(...formattedData.map((data) => data.calories));
@@ -55,7 +52,7 @@ export default function Activity({ id }: { id: number }) {
      * @returns {JSX.Element|null} Composant d'infobulle ou null si inactif
      */
     const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
-        console.log('payload', payload);
+
 
         if (active && payload && payload.length) {
             return (

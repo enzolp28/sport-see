@@ -45,7 +45,7 @@ export default function Score({ score }: { score: number }) {
                     <p>{score * 100}%</p>
                     <p>de votre objectif</p>
                 </div>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="100%" style={{ borderRadius: "5px" }}>
                     <RadialBarChart width={300} height={250} cx="50%" cy="50%" innerRadius="100%" outerRadius="100%" barSize={10} data={data} startAngle={90}>
                         <RadialBar
                             minAngle={15}
