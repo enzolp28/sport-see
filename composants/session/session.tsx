@@ -55,8 +55,8 @@ const Sessions = ({ id }: { id: number }) => {
         <div className="graph-container">
             <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: "#FF0000", borderRadius: "5px" }}>
                 <LineChart
-                    width={300}
-                    height={300}
+                    width={200}
+                    height={200}
                     data={formattedData}
                     margin={{ top: 30, right: 5, left: 5, bottom: 5 }}
                 >

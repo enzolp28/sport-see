@@ -27,6 +27,7 @@ export default  function Profil() {
     const id = params?.id;
     const { data } = useFetch(Number(id), '');
 
+
     const score = data?.score ? data.score : data?.todayScore;
 
 
@@ -46,7 +47,7 @@ export default  function Profil() {
                     <div className="three-graph">
                         <Sessions id={Number(id)} />
                         <Performance id={Number(id)} />
-                        <Score score={score} />
+                         <Score score={score} /> 
                     </div>
                 </div>
                 <div className="macro-container">

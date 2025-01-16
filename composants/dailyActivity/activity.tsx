@@ -53,7 +53,6 @@ export default function Activity({ id }: { id: number }) {
      */
     const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
 
-
         if (active && payload && payload.length) {
             return (
                 <div className="custom-tooltip">
