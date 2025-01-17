@@ -23,5 +23,6 @@ body {
 main {
   display: grid;
   grid-template-columns: 1fr 7fr;
+  min-height: calc(100vh - 91px);
 
 }

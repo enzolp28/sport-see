@@ -4,11 +4,10 @@
 import Activity from '@/composants/dailyActivity/activity';
 import Macronutriment from '@/composants/macronutriment/macronutriment';
 import './page.css'
-import Sessions from '@/composants/session';
-import Performance from '@/composants/performance';
-import Score from '@/composants/score';
+import Sessions from '@/composants/session/session';
+import Performance from '@/composants/performance/performance';
+import Score from '@/composants/score/score';
 import useFetch from '@/lib/useFetch';
-import { use } from 'react';
 import { useParams } from 'next/navigation';
 
 
@@ -47,7 +46,7 @@ export default  function Profil() {
                     <div className="three-graph">
                         <Sessions id={Number(id)} />
                         <Performance id={Number(id)} />
-                         <Score score={score} /> 
+                        <Score score={score} /> 
                     </div>
                 </div>
                 <div className="macro-container">

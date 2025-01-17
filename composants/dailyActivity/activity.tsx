@@ -114,6 +114,7 @@ export default function Activity({ id }: { id: number }) {
                     />
 
                     <Tooltip content={<CustomTooltip />} />
+                    
                     <Legend
                         verticalAlign="top"
                         align="right"
