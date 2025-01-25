@@ -19,8 +19,6 @@ export default function useFetch(id: number, type: string) {
     useEffect(() => {
         async function fetchData() {
             try {
-                console.log('id', id);
-                console.log('type', type);
                 const response = await fetch(`http://localhost:3000/user/${id}/${type}`);
                 const data = await response.json();
                 setData(data.data);

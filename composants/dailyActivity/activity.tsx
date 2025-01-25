@@ -1,6 +1,6 @@
 "use client"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { USER_ACTIVITY } from '@/lib/data';
+// import { USER_ACTIVITY } from '@/lib/data';
 import './activity.css'
 import useFetch from '@/lib/useFetch';
 
@@ -38,7 +38,7 @@ export default function Activity({ id }: { id: number }) {
         calories: session.calories
     }))
 
-    const minKilogram = Math.min(...formattedData.map((data) => data.kilogram));
+    const minKilogram = Math.min(...formattedData.map((data ) => data.kilogram));
     const maxKilogram = Math.max(...formattedData.map((data) => data.kilogram));
 
 

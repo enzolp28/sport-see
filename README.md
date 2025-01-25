@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SportSee
 
-## Getting Started
+Application de suivi de performances sportives
 
-First, run the development server:
+## Frontend
 
+### Prérequis
+
+- Node.js (version recommandée : 18.x ou supérieure)
+- npm ou yarn
+
+### Installation
+
+1. Clonez le projet
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/enzolp28/sport-see.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Accédez au répertoire du projet
+```bash
+cd sport-see
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Installez les dépendances
+```bash
+npm install
+# ou
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Lancement du serveur frontend
 
-## Learn More
+Pour lancer l'application en mode développement :
+```bash
+npm run dev
+# ou
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+L'application sera accessible à l'adresse [http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pour construire l'application pour la production :
+```bash
+npm run build
+# ou
+yarn build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Pour lancer l'application en mode production :
+```bash
+npm run start
+# ou
+yarn start
+```
 
-## Deploy on Vercel
+## Backend (API)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prérequis
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- NodeJS (version 12.18 ou supérieure)
+- Yarn
+- Docker (optionnel)
+
+### Installation et lancement (sans Docker)
+
+1. Clonez le dépôt du backend
+2. Installez les dépendances avec la commande `yarn`
+3. Lancez l'API avec la commande `yarn dev`
+
+### Installation et lancement (avec Docker)
+
+1. Construisez l'image Docker :
+```bash
+docker image build --no-cache -t micro-api .
+```
+
+2. Lancez le conteneur :
+```bash
+docker container run --name micro-api -p 3000:3000 -dt micro-api yarn
+```
+
+Pour arrêter le conteneur :
+```bash
+docker container stop micro-api
+```
+
+Pour supprimer le conteneur :
+```bash
+docker container rm micro-api
+```
+
+### Endpoints disponibles
+
+L'API inclut quatre endpoints :
+
+- `http://localhost:3000/user/${userId}` - Informations utilisateur (données personnelles, score du jour, données clés)
+- `http://localhost:3000/user/${userId}/activity` - Activité quotidienne (poids et calories)
+- `http://localhost:3000/user/${userId}/average-sessions` - Sessions moyennes par jour
+- `http://localhost:3000/user/${userId}/performance` - Performances utilisateur
+
+**Note importante : Seuls deux utilisateurs sont disponibles avec les ID 12 et 18.**
+
+## Technologies utilisées
+
+### Frontend
+- Next.js 15.0
+- React 18
+- TypeScript
+- Recharts
+- Tailwind CSS
+
+### Backend
+- Node.js
+- Express

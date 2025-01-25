@@ -1,8 +1,8 @@
 "use client"
 // import React, { PureComponent } from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import useFetch from '@/lib/useFetch';
-import { log } from 'console';
+
 
 /**
  * Composant Performance qui affiche un graphique radar des différentes métriques de performance

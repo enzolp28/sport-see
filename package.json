@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "doc": "jsdoc -c jsdoc.json"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "15.0.1",
