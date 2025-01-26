@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { USER_AVERAGE_SESSIONS, USER_ACTIVITY, USER_PERFORMANCE, USER_MAIN_DATA } from '@/lib/data';
 
@@ -18,37 +17,45 @@ export default function useFetch(id: number, type: string) {
 
     useEffect(() => {
         async function fetchData() {
-            try {
-                const response = await fetch(`http://localhost:3000/user/${id}/${type}`);
-                const data = await response.json();
-                setData(data.data);
-                setLoading(false);
-            } catch (error) {
-                console.error(error);
+            const getMockdata = () => {
                 switch (type) {
                     case 'average-sessions':
-                        setData(USER_AVERAGE_SESSIONS.find((user) => user.userId === id));
-                        break;
-
+                        return USER_AVERAGE_SESSIONS.find((user) => user.userId === id);
                     case 'activity':
-                        setData(USER_ACTIVITY.find((user) => user.userId === id));
-                        break;
-
+                        return USER_ACTIVITY.find((user) => user.userId === id);
                     case 'performance':
-                        setData(USER_PERFORMANCE.find((user) => user.userId === id));
-                        break;
-
+                        return USER_PERFORMANCE.find((user) => user.userId === id);
                     case '':
-                        setData(USER_MAIN_DATA.find((user) => user.id === id));
-                        break;
-
+                        return USER_MAIN_DATA.find((user) => user.id === id);
                     default:
-                        break;
+                        return null;
                 }
+            };
+
+            // Si on utilise les données mockées, on les retourne directement
+            if (process.env.NEXT_PUBLIC_USE_MOCKED_DATA === "true") {
+                const mockData = getMockdata();
+                setData(mockData);
+                setLoading(false);
+                return;
+            }
+
+            // Sinon, on essaie de récupérer les données depuis l'API
+            try {
+                const response = await fetch(`http://localhost:3000/user/${id}/${type}`);
+                const jsonData = await response.json();
+                setData(jsonData.data);
+            } catch (error) {
+                console.error("Erreur lors de la récupération des données:", error);
+                // En cas d'erreur, on utilise les données mockées
+                const mockData = getMockdata();
+                setData(mockData);
+            } finally {
                 setLoading(false);
             }
         }
         fetchData();
-    }, []);
+    }, [id, type]);
+
     return { data, loading };
 }

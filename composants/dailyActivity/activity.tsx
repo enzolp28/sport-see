@@ -30,20 +30,21 @@ export default function Activity({ id }: { id: number }) {
     if (loading) {
         return <div>Loading...</div>;
     }
-    console.log('activity', data);
 
     const formattedData = data?.sessions.map((session) => ({
-        day: Number(session.day.slice(-2)),
+        day: Number(session.day.slice(-2)), //permet de prendre seulement les derniers 2 chiffres du jour
         kilogram: session.kilogram,
         calories: session.calories
     }))
 
+    //permet d'ajuster pour definir l'echelle du graphique
+    /*
     const minKilogram = Math.min(...formattedData.map((data ) => data.kilogram));
     const maxKilogram = Math.max(...formattedData.map((data) => data.kilogram));
 
-
     const minCalories = Math.min(...formattedData.map((data) => data.calories));
     const maxCalories = Math.max(...formattedData.map((data) => data.calories));
+    */
 
     /**
      * Composant d'infobulle personnalisée pour le graphique d'activité
@@ -52,7 +53,6 @@ export default function Activity({ id }: { id: number }) {
      * @returns {JSX.Element|null} Composant d'infobulle ou null si inactif
      */
     const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
-
         if (active && payload && payload.length) {
             return (
                 <div className="custom-tooltip">
@@ -114,7 +114,7 @@ export default function Activity({ id }: { id: number }) {
                     />
 
                     <Tooltip content={<CustomTooltip />} />
-                    
+
                     <Legend
                         verticalAlign="top"
                         align="right"
