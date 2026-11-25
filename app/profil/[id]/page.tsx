@@ -50,10 +50,10 @@ export default  function Profil() {
                     </div>
                 </div>
                 <div className="macro-container">
-                    <Macronutriment id={Number(id)} calories={data.keyData.calorieCount} info="KCal" src="/calories-icon.svg" value="Calories" />
-                    <Macronutriment id={Number(id)} calories={data.keyData.proteinCount} info="g" src="/protein-icon.svg" value="Proteines" />
-                    <Macronutriment id={Number(id)} calories={data.keyData.carbohydrateCount} info="g" src="/glucide-icon.svg" value="Glucides" />
-                    <Macronutriment id={Number(id)} calories={data.keyData.lipidCount} info="g" src="/lipide-icon.svg" value="Lipides" />
+                    <Macronutriment id={Number(id)} calories={data.keyData.calorieCount} info="KCal" src={`${process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" ? "/sport-see" : ""}/calories-icon.svg`} value="Calories" />
+                    <Macronutriment id={Number(id)} calories={data.keyData.proteinCount} info="g" src={`${process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" ? "/sport-see" : ""}/protein-icon.svg`} value="Proteines" />
+                    <Macronutriment id={Number(id)} calories={data.keyData.carbohydrateCount} info="g" src={`${process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" ? "/sport-see" : ""}/glucide-icon.svg`} value="Glucides" />
+                    <Macronutriment id={Number(id)} calories={data.keyData.lipidCount} info="g" src={`${process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" ? "/sport-see" : ""}/lipide-icon.svg`} value="Lipides" />
                 </div>
             </div>
         </div>
