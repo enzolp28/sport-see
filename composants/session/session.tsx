@@ -15,7 +15,7 @@ const Sessions = ({ id }: { id: number }) => {
 
     // const data = USER_AVERAGE_SESSIONS.find((user) => user.userId === id);
     const jourDeSemaine = ["L", "M", "M", "J", "V", "S", "D"];
-    const formattedData = data?.sessions.map((session) => ({
+    const formattedData = data?.sessions.map((session: { day: number; sessionLength: number }) => ({
         day: jourDeSemaine[session.day - 1],
         sessionLength: session.sessionLength
     }))
