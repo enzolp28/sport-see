@@ -23,7 +23,7 @@ export default function Performance({ id }: { id: number }) {
      * Mapping des traductions pour les métriques de performance
      * @type {Object.<string, string>}
      */
-    const translations = {
+    const translations: Record<string, string> = {
         cardio: 'Cardio',
         energy: 'Ènergie',
         endurance: 'Endurance',
@@ -49,12 +49,12 @@ export default function Performance({ id }: { id: number }) {
         value: number;
     }
     console.log("Data----", data)
-    const formattedData = data?.data ?
-        .map((item) => ({
+    const formattedData = data?.data
+        ?.map((item: { kind: number; value: number }) => ({
         kind: translations[data.kind[item.kind]],
         value: item.value
     }))
-            .sort((a, b) => desiredOrder.indexOf(a.kind) - desiredOrder.indexOf(b.kind));
+            .sort((a: { kind: string }, b: { kind: string }) => desiredOrder.indexOf(a.kind) - desiredOrder.indexOf(b.kind));
 
     const dataKind = Object.values(data?.kind);
     console.log(dataKind)

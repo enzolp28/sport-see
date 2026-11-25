@@ -31,7 +31,7 @@ export default function Activity({ id }: { id: number }) {
         return <div>Loading...</div>;
     }
 
-    const formattedData = data?.sessions.map((session) => ({
+    const formattedData = data?.sessions.map((session: { day: string; kilogram: number; calories: number }) => ({
         day: Number(session.day.slice(-2)), //permet de prendre seulement les derniers 2 chiffres du jour
         kilogram: session.kilogram,
         calories: session.calories

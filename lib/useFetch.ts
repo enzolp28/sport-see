@@ -12,6 +12,8 @@ import { USER_AVERAGE_SESSIONS, USER_ACTIVITY, USER_PERFORMANCE, USER_MAIN_DATA 
  */
 
 export default function useFetch(id: number, type: string) {
+    // Data shapes differ by dashboard endpoint; the existing chart consumers interpret them.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [data, setData] = useState<any>(null);
     const [loading, setLoading] = useState<boolean>(true);
 

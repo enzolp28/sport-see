@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import Cartuser from "@/composants/cartUser/cartUser";
+import Cartuser from "@/composants/cartUser/cartuser";
 import { USER_MAIN_DATA } from '@/lib/data';
 
 export default function Home() {
