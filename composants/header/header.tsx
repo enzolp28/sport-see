@@ -12,7 +12,7 @@ import Link from 'next/link'
 export default function Header() {
     return (
         <div className="header">
-            <Image src="/logo-sportsee.svg" priority={true} alt="logo" width={178} height={0} />
+            <Image src={`${process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" ? "/sport-see" : ""}/logo-sportsee.svg`} priority={true} alt="logo" width={178} height={0} />
             <Link href="/">
                 <p>Accueil</p>
             </Link>
