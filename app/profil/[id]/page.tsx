@@ -12,12 +12,6 @@ import { useParams } from 'next/navigation';
 
 
 
-type ParamsType = {
-    params: {
-        id: string
-    }
-}
-
 
 export default  function Profil() {
     // const { id } = await params;
